@@ -15,9 +15,9 @@ Welcome to the **WebDesigning** GitHub repository! This repository contains prac
 
 ##🛠️ Technologies Used
 
-*HTML5 - Structuring web content
-*CSS3 - Styling and layout design
-*JavaScript - Adding interactivity and functionality
+1. **HTML5** - Structuring web content
+2. **CSS3** - Styling and layout design
+3. **JavaScript** - Adding interactivity and functionality
 
 ---
 
