@@ -13,7 +13,7 @@ Welcome to the **WebDesigning** GitHub repository! This repository contains prac
 
 ---
 
-##🛠️ Technologies Used
+## 🛠️ Technologies Used
 
 1. **HTML5** - Structuring web content
 2. **CSS3** - Styling and layout design
@@ -21,7 +21,7 @@ Welcome to the **WebDesigning** GitHub repository! This repository contains prac
 
 ---
 
-📧 Contact
+## 📧 Contact
 
 For any queries or suggestions, feel free to reach out via email. 
 
