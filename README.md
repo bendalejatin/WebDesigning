@@ -1,4 +1,4 @@
-# WebDesigning Repository  
+# WebDesigning 
 
 Welcome to the **WebDesigning** GitHub repository! This repository contains practicals completed during my college semester, organized into four main folders based on the technologies used.
 
