@@ -23,7 +23,7 @@ Welcome to the **WebDesigning** GitHub repository! This repository contains prac
 
 📧 Contact
 
-For any queries or suggestions, feel free to reach out via email at: your-email@example.com
+For any queries or suggestions, feel free to reach out via email. 
 
 ---
 
