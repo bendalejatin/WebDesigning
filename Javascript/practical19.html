@@ -1,0 +1,33 @@
+<!--Name: Jatin Bendale-->
+<!--Enrollment no: 202203103510038-->
+<!--Branch: B.Tech. Computer Science and Engineering -->
+
+<html>
+   <head>
+      <title>How to get and set value from textfield using jQuery</title>
+   </head>
+   <body>
+      <h2>How to get and set value from text input type using jQuery</h2>
+      <input type="text" id="username" value="Enter Username" />
+      <button id="btn_submit">Submit</button>
+      <div id="result"></div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+      <script>
+         $(document).ready(function() {
+         
+         $("#username").click(function() {
+         $(this).val("");
+         });
+         
+         $("#btn_submit").click(function(){
+         var value = $("#username").val();
+         $("#result").text("You have entered: " + value);
+         
+         $("#username").val("");
+         });
+         
+         });
+      </script>
+   </body>
+</html>

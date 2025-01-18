@@ -1,0 +1,62 @@
+<!--Name: Jatin Bendale-->
+<!--Enrollment no: 202203103510038-->
+<!--Branch: B.Tech. Computer Science and Engineering -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #candidate {
+            border-radius: 10%;
+            border-color: aquamarine;
+            box-sizing: border-box;
+        }
+
+        .buttonClass {
+            border-radius: 20%;
+            border-color: aqua;
+            border-style: inherit;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        fieldset {
+            max-height: fit-content;
+            max-width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <h1>Dynamic Web Page</h1>
+        <ul id="list"></ul>
+        <input type="text" id="candidate" />
+        <button onclick="addItem()" class="buttonClass">
+            Add item</button>
+        <button onclick="removeItem()" class="buttonClass">
+            Remove item</button>
+    </fieldset>
+    <script>
+        function addItem() {
+            var a = document.getElementById("list");
+            var candidate = document.getElementById("candidate");
+            var li = document.createElement("li");
+            li.setAttribute('id', candidate.value);
+            li.appendChild(document.createTextNode(candidate.value));
+            a.appendChild(li);
+        }
+        function removeItem() {
+
+            var a = document.getElementById("list");
+            var candidate = document.getElementById("candidate");
+            var item = document.getElementById(candidate.value);
+            a.removeChild(item);
+        }
+    </script>
+</body>
+
+</html>

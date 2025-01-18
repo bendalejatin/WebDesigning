@@ -1,0 +1,205 @@
+<!--Name: Jatin Bendale-->
+<!--Enrollment no: 202203103510038-->
+<!--Branch: B.Tech. Computer Science and Engineering -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practical 16</title>
+        <style>
+            body{
+                background-color: rgb(94, 187, 187);
+            }            
+            fieldset{
+                background-color: rgb(215, 235, 230);
+                text-align: left;
+                font-family: Calibri;
+                font-size: 20px;
+                border: 3px solid black;
+                width: 550px;
+                margin: 20px auto;
+            }
+            td {
+                padding: 10px;           
+            }
+            h1{
+                text-align: center;
+            }
+            #sub{
+                background-color: rgb(40, 206, 90);
+                border-radius: 5px ;
+                width: 80px;
+                height: 30px;
+                font-size: 14px;
+            }
+            #res{
+                background-color: rgb(40, 206, 90);
+                border-radius: 5px ;
+                width: 80px;
+                height: 30px;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <center><h1>Library Book Issue Form</h1></center>
+        <fieldset>
+            <form method="post" action="" name="reg_form" onsubmit="return validate()">
+                <table>
+                    <tr>
+                        <td><label>Name:</label></td>
+                        <td>
+                            <input type="text" name="name" placeholder="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Enrollment Number:</label></td>
+                        <td>
+                            <input type="text" name="enrollment" placeholder="enrollment">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Gender:</label></td>
+                        <td>
+                            <input type="radio" name="GENDER" value="male">Male
+                            <input type="radio" name="GENDER" value="female">Female
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>E-mail Id:</label></td>
+                        <td>
+                            <input type="email" name="email" placeholder="abc@gmail.com">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Book Title:</label></td>
+                        <td>
+                            <input type="text" name="booktitle" placeholder="book title">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Book Barcode Number:</label></td>
+                        <td>
+                            <input type="text" name="barcode" placeholder="barcode number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Department Name:</label></td>
+                        <td>
+                            <input type="radio" name="department" value="AMTICS">AMTICS
+                            <input type="radio" name="department" value="BMIT">BMIT
+                            <input type="radio" name="department" value="CGBIBT">CGBIBT<br>
+                            <input type="radio" name="department" value="CGPIT">CGPIT
+                            <input type="radio" name="department" value="PHARMACY">PHARMACY
+                            <input type="radio" name="department" value="SHRIMCA">SHRIMCA
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Issue Date:</label></td>
+                        <td>
+                            <input type="date" name="issuedate">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Return Date:</label></td>
+                        <td>
+                            <input type="date" name="returndate">
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">
+                            <input type="submit" id="sub" name="submit" value="Submit">
+                            <input type="reset" id="res" name="reset" value="Reset">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+        <script>
+            function validate() {
+                var name = document.reg_form.name;
+                var enrollment = document.reg_form.enrollment;
+                var gender = document.reg_form.GENDER;
+                var email = document.reg_form.email;
+                var bookTitle = document.reg_form.booktitle;
+                var barcode = document.reg_form.barcode;
+                var department = document.reg_form.department;
+                var issueDate = document.reg_form.issuedate;
+                var returnDate = document.reg_form.returndate;
+
+                if (name.value.length == 0) {
+                    alert("Name is required.");
+                    name.focus();
+                    return false;
+                }
+
+                if (enrollment.value.trim() == "") {
+                    alert("Enrollment Number is required.");
+                    enrollment.focus();
+                    return false;
+                } else if (!/^\d{15}$/.test(enrollment.value)) {
+                    alert("Enrollment Number must be exactly 15 digits.");
+                    enrollment.focus();
+                    return false;
+                }
+
+                if (!gender.value) {
+                    alert("Please select your Gender.");
+                    return false;
+                }
+
+                if (email.value.length == 0) {
+                    alert("Email is required.");
+                    email.focus();
+                    return false;
+                } else if (!validateEmail(email.value)) {
+                    alert("Please enter a valid email address.");
+                    email.focus();
+                    return false;
+                }
+
+                if (bookTitle.value.length == 0) {
+                    alert("Book Title is required.");
+                    bookTitle.focus();
+                    return false;
+                }
+
+                if (barcode.value.length == 0) {
+                    alert("Book Barcode Number is required.");
+                    barcode.focus();
+                    return false;
+                }
+
+                if (!department.value) {
+                    alert("Please select your Department.");
+                    return false;
+                }
+
+                if (issueDate.value.length == 0) {
+                    alert("Issue Date is required.");
+                    issueDate.focus();
+                    return false;
+                }
+
+                if (returnDate.value.length == 0) {
+                    alert("Return Date is required.");
+                    returnDate.focus();
+                    return false;
+                }
+
+                if (new Date(issueDate.value) > new Date(returnDate.value)) {
+                    alert("Return Date cannot be before Issue Date.");
+                    returnDate.focus();
+                    return false;
+                }
+
+                return true;
+            }
+
+            function validateEmail(email) {
+                var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                return emailPattern.test(email);
+            }
+        </script>
+    </body>
+</html>

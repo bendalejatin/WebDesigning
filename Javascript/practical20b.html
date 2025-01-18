@@ -1,0 +1,32 @@
+<!--Name: Jatin Bendale-->
+<!--Enrollment no: 202203103510038-->
+<!--Branch: B.Tech. Computer Science and Engineering -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical20(b)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="get">Get Date</button>
+    <h1 id="priDate"></h1>
+
+    <script>
+        $("#get").click(function(){
+            let currentDate = new Date();
+        let Day = currentDate.getDate()
+        let Month = currentDate.getMonth() + 1
+        let Year = currentDate.getFullYear()
+        var today = new Date();
+        var hours = today.getHours();
+        var minutes = today.getMinutes() + 1;
+        var seconds = today.getSeconds();
+            $("h1").text("Time: " + hours + ":" + minutes + ":" + seconds+ "\n" +"\n"+ "Date: " + Day + "/" + Month + "/" + Year);
+        });
+    </script>
+</body>
+</html>
