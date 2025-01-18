@@ -1,0 +1,73 @@
+<!--Name: Jatin Bendale-->
+<!--Enrollment no: 202203103510038-->
+<!--Branch: B.Tech. Computer Science and Engineering -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>practical 13</title>
+        <style>
+            body{
+                background-color: #bbb;
+            }
+            fieldset{
+                width: fit-content;
+                height: fit-content;
+            }
+            .result{
+                width: 400px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <h1>Max of Three Numbers</h1>
+        <fieldset>
+        Enter the first number:
+        <input type="text" id="first" ><br>
+        Enter the second number:
+        <input type="text" id="second" ><br>
+        Enter the third number:
+        <input type="text" id="third" ><br>
+        <button class="conclude">Click on this button</button>
+        <div class="result">
+
+        </div>
+        </fieldset>
+        </center>
+
+        <script>
+            
+            function largestNumber(n1 , n2, n3){
+                if(n1>n2 && n1>n3){
+                    return n1;
+                }
+                else if(n2>n1 && n2>n3){
+                    return n2;
+                }
+                else{
+                    return n3;
+                }
+                }
+                
+            function pushToDOM(input){
+                var display = document.querySelector('.result');
+                display.innerHTML = "<p><strong>" + input + "</strong> is the largest number.<p>";
+            } 
+
+            var button = document.querySelector('.conclude');
+            button.addEventListener('click', function(){
+                var a = document.querySelector('#first').value;
+                var b = document.querySelector('#second').value;
+                var c = document.querySelector('#third').value;
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                var result = largestNumber(a, b, c);
+                console.log(result);
+                pushToDOM(result);
+            });       
+        </script>
+    </body>
+</html>
